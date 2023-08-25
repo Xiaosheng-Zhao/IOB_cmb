@@ -17,9 +17,16 @@
 
 **Environment**: Run `Conda env create -f operon.yaml` to replicate the environment I have tested. All dependence including `torch` are in `operon.yaml`;
 
-**Data source**: infinity: /data77/xiaosheng/IOB_cmb_data/data.zip 
+**Data source**: infinity: /data77/xiaosheng/IOB_cmb_data/camb_new_TT.zip 
 
- cp and `unzip data.zip` under `IOB_cmb`; The 10000 raw TT data under the `./data/camb_new/` folder, which is about 196 Mb. Data format: data[:6] are the 6 cosmological parameters; data[6:] are the TT power spectrum with l={2,3,...2500}
+ cp and `unzip camb_new_TT.zip` under the `./data/camb_new/` folder; There are 10000 raw TT samples that is about 196 Mb. Data format: data[:6] are the 6 cosmological parameters; data[6:] are the TT power spectrum with l={2,3,...2500}
+ 
+Similarly, for **Polarized CMB**:
+
+- TE: /data77/xiaosheng/IOB_cmb_data/camb_new_TE.zip;
+- EE: /data77/xiaosheng/IOB_cmb_data/camb_new_EE.zip;
+
+can unzip under the `./data/camb_new/` folder for further use
 
 **With jupyter notebook**
 
@@ -38,13 +45,6 @@
 - **python replace.py --model_name=shallow96 --cmb_type=TT --operon_name=run1 --thin=200** (may need to comment `os.environ["CUDA_VISIBLE_DEVICES"]` in the beginning)
 
 the last command will output two csv files "pareto\_good\_model\_\*" and "individuals\_good_model\_" under the `./data/sr/` folder. They are the "good" expressions of the first latent from operon. When replacing the first latent with the outputs from these expressions, the final weighted mse in the data space is less than 1. The two files correspond to the expressions from the pareto front and all 2000 individual expressions during each operon run.
-
-**Polarized CMB**:
-
-- TE: /data77/xiaosheng/IOB_cmb_data/camb_new_TE.zip;
-- EE: /data77/xiaosheng/IOB_cmb_data/camb_new_EE.zip;
-
-can unzip under the `data/camb_new/` folder for use
 
 **File structure** under `IOB_cmb`:
 ```
