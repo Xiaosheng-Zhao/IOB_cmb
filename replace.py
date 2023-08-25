@@ -192,7 +192,7 @@ def main():
     print('Outputting good expressions of the first latent with final weighted mse less than 1 for pareto')
     with open('./data/sr/pareto_good_model_latent%d_model_%s_operon_%s.csv'%(1, name,operon_name), 'w') as f:
         writer = csv.writer(f, delimiter=',')
-        writer.writerow(['length','expression'])
+        writer.writerow(['length','weighted MSE','expression'])
         
         maskindex = 6
         for ind_var in range(maskindex):
@@ -217,7 +217,7 @@ def main():
                 test_losses_onloader_onemodel_parato.append(np.array(temp))
                 if ind_var==0 and temp<=1:
                 #if True:
-                    writer.writerow([complexity[ind],data0['infix'][ind]])
+                    writer.writerow([complexity[ind],np.round(np.array(temp),3),data0['infix'][ind]])
                 
             ### Plot the results
             # The weighted loss
@@ -236,7 +236,7 @@ def main():
             ax2.set_yscale('log')
             ax2.set_ylabel('MSE for SR (red)',fontsize=16)
             
-            print ('The weighted MSE:',np.array(test_losses_onloader_onemodel_parato))
+            print ('The weighted MSE for latent%d:'%ind_var,np.array(test_losses_onloader_onemodel_parato))
             plt.show()
             plt.close()
             #for i in range(len(complexity)):
@@ -251,7 +251,7 @@ def main():
     print('Outputting good expressions of the first latent with final weighted mse less than 1 for individuals')
     with open('./data/sr/individual_good_model_latent%d_model_%s_operon_%s.csv'%(1, name,operon_name), 'w') as f:
         writer = csv.writer(f, delimiter=',')
-        writer.writerow(['length','expression'])
+        writer.writerow(['length','weighted MSE','expression'])
         
         maskindex = 6
         #interval=1 # 200 for fewer computational costs
@@ -261,6 +261,9 @@ def main():
             
             # sr prediction: [len(expressions),500], i.e. [2000,500]
             sr_pred = torch.tensor(np.float32(np.load('./data/sr/pred_individuals_%s.npy'%test_name)))
+            # expressions: [len(expressions),]
+            data0=pd.read_csv('./data/sr/individuals_%s.csv'%test_name)
+            # Complexity of the expressions
             complexity=pd.read_csv('./data/sr/individuals_%s.csv'%test_name)['length'].values[::interval]
             
             num_plot = 2000 #10 # number of individuals in the operon setting is 2000
@@ -269,7 +272,7 @@ def main():
                 test_losses_onloader_onemodel_individual.append(temp)
                 if ind_var==0 and temp<=1:
                 #if True:
-                    writer.writerow([complexity[ind],data0['infix'][ind]])
+                    writer.writerow([complexity[ind],np.round(np.array(temp),3),data0['infix'][ind]])
                 
             ### Plot the results
             fig,ax = plt.subplots(figsize=(8,6))
