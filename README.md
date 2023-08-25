@@ -13,13 +13,6 @@ Similarly, for **Polarized CMB**:
 
 can unzip under the `./data/camb_new/` folder for further use
 
-**With jupyter notebook**
-
-* Run [Generate the TT/TE/EE data (re-generate if need)](#create_cmb_data) (and uncomment the corresponding lines) to generate TE and EE data, can skip if do not need;
-* Run [Create noised data](#noised_data) to post-process the TT data (adding cosmic variance and rescaling);
-* Can just turn to [Train the encoder-decoder](#train), if the data are already post-processed;
-* Can just turn to [Test and variation of the latents](#test), [SR with pyoperon](#operon), and [Inspect the data space (replacement of latents)](#weighted), if you do not want to retrain the model.
-
 **With command lines**:
 
 - **python generate_ps.py** (optionally)
