@@ -1,20 +1,5 @@
 # IOB for CMB spectra
 ---
-`References`
-- [camb notebook](https://camb.readthedocs.io/en/latest/CAMBdemo.html)
-- [pyoperon](https://github.com/heal-research/pyoperon)
-    
-`Main contents`
-* [Prepare the data](#data)
-  - [Generate the TT/TE/EE data (re-generate if need)](#create_cmb_data)
-  - [Create noised data](#noised_data)
-* [Train the encoder-decoder](#train)
-* [Test and variation of the latents](#test)
-* [SR with pyoperon](#operon)
-* [Inspect the data space](#weighted)
-
-**README:**
-
 **Environment**: Run `Conda env create -f operon.yaml` to replicate the environment I have tested. All dependence including `torch` are in `operon.yaml`;
 
 **Data source**: infinity: /data77/xiaosheng/IOB_cmb_data/camb_new_TT.zip 
@@ -71,3 +56,8 @@ IOB_cmb
 └───example notebook
 |   └─── IOB_for_CMB_spectra.ipynb
 ```
+
+`References`
+- [camb notebook](https://camb.readthedocs.io/en/latest/CAMBdemo.html)
+- [pyoperon](https://github.com/heal-research/pyoperon)
+- Refer to [Pytorch IOBs](https://github.com/maho3/pytorch-iobs) and [paper](https://arxiv.org/abs/2305.11213) for more about the IOB methodology and applications.
