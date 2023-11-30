@@ -46,7 +46,7 @@ def train_epoch(encoder, decoder, maskin, d_encode, device, dataloader, loss_fn,
         range_index=torch.arange(1, d_encode+1)
         for x_index in range(d_encode+1):
             mask1 = range_index.le(x_index).unsqueeze(0).to(device)
-            loss+=loss_fn(data_batch_mean[:,0,:], decoder(maskin_data*mask1),err)
+            loss+=loss_fn(data_batch[:,0,:], decoder(maskin_data*mask1),err)
             
         optimizer.zero_grad()
         loss.backward()
@@ -90,7 +90,7 @@ def valid_epoch(encoder, decoder, maskin, d_encode, device, dataloader, loss_fn)
         conc_data_mean = torch.cat(conc_data_mean)
         conc_err = torch.cat(conc_err)
         # Evaluate global loss
-        val_loss = loss_fn(conc_out, conc_data_mean[:,0,:],conc_err)
+        val_loss = loss_fn(conc_out, conc_data[:,0,:],conc_err)
     return val_loss.data
 
 def main():
