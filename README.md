@@ -1,6 +1,6 @@
 # IOB for CMB spectra
 ---
-**Environment**: Run `Conda env create -f operon.yaml` to replicate the environment I have tested. All dependence including `torch` are in `operon.yaml`;
+**Environment**: Run `Conda env create -f operon.yaml` to replicate the environment I have tested. All dependence including `torch` are in `operon.yaml`; **may need to pip install some package, please check the operon.yaml**
 
 **Data source**: infinity: /data77/xiaosheng/IOB_cmb_data/camb_new_TT.zip 
 
