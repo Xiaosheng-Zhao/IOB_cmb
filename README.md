@@ -20,7 +20,7 @@ can unzip under the `./data/camb_new/` folder for further use
 - **python train.py --model_name=shallow96 --epoch=2048 --cmb_type=TT** (may need to comment `os.environ["CUDA_VISIBLE_DEVICES"]` in the beginning)
 - **python test.py --model_name=shallow96 --cmb_type=TT** (may need to comment `os.environ["CUDA_VISIBLE_DEVICES"]` in the beginning)
 - **python operon.py --model_name=shallow96 --cmb_type=TT --operon_name=run1**
-- **python replace.py --model_name=shallow96 --cmb_type=TT --operon_name=run1 --thin=200** Check the `inspect the data space` section in the `IOB_for_CMB_spectra.ipynb`. (may need to comment `os.environ["CUDA_VISIBLE_DEVICES"]` in the beginning)
+- **python replace.py --model_name=shallow96 --cmb_type=TT --operon_name=run1 --thin=200** . For better visualization, check the `inspect the data space` section in the `IOB_for_CMB_spectra.ipynb`. (may need to comment `os.environ["CUDA_VISIBLE_DEVICES"]` in the beginning)
 
 the last command will output two csv files "pareto\_good\_model\_\*" and "individuals\_good_model\_" under the `./data/sr/` folder. They are the "good" expressions of the first latent from operon. When replacing the first latent with the outputs from these expressions, the final weighted mse in the data space is less than 1. The two files correspond to the expressions from the pareto front and all 2000 individual expressions during each operon run.
 
