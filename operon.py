@@ -105,7 +105,7 @@ def operon_cmb(y,X,test_name,cal_individual):
             max_length=50,
             initialization_method='btc',
             n_threads=32,
-            objectives = ['r2', 'length'],
+            objectives = ['mse', 'length'],
             epsilon = 1e-3,
             random_state=None,
             reinserter='keep-best',
