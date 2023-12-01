@@ -1,4 +1,4 @@
-name: operon
+name: iob_operon
 channels:
   - conda-forge
   - https://mirrors.tuna.tsinghua.edu.cn/anaconda/pkgs/free/
@@ -9,6 +9,17 @@ channels:
   - bioconda
   - defaults
 dependencies:
+  - cxx-compiler
+  - clangxx
+  - cmake
+  - eigen
+  - git
+  - make
+  - ninja
+  - pkg-config
+  - pybind11
+  - scikit-build
+  - xxhash
   - _libgcc_mutex=0.1=conda_forge
   - _openmp_mutex=4.5=2_gnu
   - binutils_impl_linux-64=2.40=hf600244_0
@@ -149,7 +160,6 @@ dependencies:
     - pure-eval==0.2.2
     - pycparser==2.21
     - pygments==2.15.1
-    - pyoperon==0.3.4
     - pyparsing==3.0.9
     - pyrsistent==0.19.3
     - python-dateutil==2.8.2
