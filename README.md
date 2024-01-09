@@ -1,5 +1,12 @@
 # IOB for CMB spectra
+Information ordered bottleneck (IOB) to interpret the CMB power spectra
 ---
+<p align = "center">
+<img width="600" src="IOB.png"/img>
+</p>
+<p align = "center">
+</p>
+
 **Environment**: Run `Conda env create -f operon.yaml` to replicate the environment I have tested. All dependence including `torch` are in `operon.yaml`; **may need to pip install some package, please check the operon.yaml**
 
 **Data source**: infinity: /data77/xiaosheng/IOB_cmb_data/camb_new_TT.zip 
