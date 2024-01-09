@@ -49,12 +49,12 @@ IOB_cmb
 |    └─── operon.py
 |    └─── replace.py   
 └───functional files
-|   └─── operon_sklearn.py
-|   └─── pytorchtools.py
-|   └─── model_cmb.py
-|   └─── load_data_cmb.py
+|    └─── operon_sklearn.py
+|    └─── pytorchtools.py
+|    └─── model_cmb.py
+|    └─── load_data_cmb.py
 └───example notebook
-|   └─── IOB_for_CMB_spectra.ipynb
+|    └─── IOB_for_CMB_spectra.ipynb
 ```
 
 `References`
